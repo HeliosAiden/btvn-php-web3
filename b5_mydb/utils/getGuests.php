@@ -1,7 +1,11 @@
-<?php 
+<?php
+    // require $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/homework/' . 'config.php';
+?>
+<?php
 
 // Kết nối db
-require_once $_SERVER['DOCUMENT_ROOT'] . '/homework/b5_mydb/Database.php';
+require_once __ROOT_DIR__ . '/b5_mydb/Database.php';
 
 $db = new Database();
 $table = 'myguests'; // Exact table name on phpadmin

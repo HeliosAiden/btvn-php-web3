@@ -1,12 +1,13 @@
+<?php
+    // require $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/homework/' . 'config.php';
+?>
 <div class="container mt-5">
     <h2 class="text-center">Insert Data into MyGuests</h2>
 
     <?php
     // Kết nối db
     require_once __DIR__ . '/Database.php';
-    global $root;
-
-    echo $root;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["firstname"]) && !empty($_POST["lastname"]) && !empty($_POST["email"])) {
         $firstname = $_POST["firstname"];
@@ -88,10 +89,10 @@
                 var firstname = $('#firstname').val();
                 var lastname = $('#lastname').val();
                 var email = $('#email').val();
-                
+
                 // Send the POST request via AJAX
                 $.ajax({
-                    url: '<?php echo $root; ?>/b5_mydb/insert.php',
+                    url: '<?php echo __ROOT_DIR__; ?>/b5_mydb/insert.php',
                     type: 'POST',
                     data: {
                         firstname: firstname,
@@ -100,7 +101,7 @@
                     },
                     success: function(response) {
                         // Redirect to list
-                        loadContent('<?php echo $root; ?>/b5_mydb/list.php')
+                        loadContent('<?php echo __ROOT_DIR__; ?>/b5_mydb/list.php')
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         $('#response').html('<p>Error: ' + textStatus + '</p>');

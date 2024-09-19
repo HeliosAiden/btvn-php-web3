@@ -1,3 +1,7 @@
+<?php
+    // require $_SERVER['DOCUMENT_ROOT'] . 'config.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/homework/' . 'config.php';
+?>
 <div class="container mt-5">
     <h2 class="text-center">MyGuests Table</h2>
     <br/>
@@ -7,7 +11,6 @@
     <?php
     // Kết nối db
     require_once __DIR__ . '/Database.php';
-
     $db = new Database();
     $table = 'myguests'; // Exact table name on phpadmin
 
@@ -23,7 +26,7 @@
     // Fetch records with pagination
     $sql = "SELECT id, firstname, lastname, email, reg_date FROM $table LIMIT $start_from, $limit";
     $result = $db->query($sql) -> fetchAll(PDO::FETCH_ASSOC);
-    
+
     ?>
 
     <table class="table table-striped table-bordered">
@@ -61,10 +64,11 @@
     $row = $result-> fetchAll(PDO::FETCH_ASSOC);
     $total_records = $row[0]['COUNT(id)'];
     $total_pages = ceil($total_records / $limit);
-    global $root;
+
 
     echo '<nav aria-label="Page navigation">';
     echo '<ul class="pagination justify-content-center">';
+    $root = __ROOT_DIR__;
 
     for ($i = 1; $i <= $total_pages; $i++) {
         echo "<li class='page-item'><a class='page-link' href='#' onclick=loadContent(" . "'$root/b5_mydb/list.php?page=" . $i . "') >" . $i . "</a></li>";
@@ -75,6 +79,6 @@
 
     ?>
     <script>
-        
+
     </script>
 </div>

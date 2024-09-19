@@ -1,6 +1,6 @@
+<?php require 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +11,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="./style/index.css" rel="stylesheet">
 </head>
-
-<?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
-// define('__ROOT_DIR__', $_SERVER['DOCUMENT_ROOT']);
-define('__ROOT_DIR__', '/homework');
-$root = __ROOT_DIR__;
-
-?>
-
 <body>
 
     <div class="d-flex">
         <!-- Sidebar -->
         <div id="sidebar" class="bg-dark">
-            <a class="nav-link" href="<?php echo $root ?>/" onclick="loadContent('<?php echo $root ?>/index.php')">
+            <a class="nav-link" href="<?php echo __ROOT_DIR__ ?>/" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/index.php')">
                 <h3 class="text-center py-3">Menu</h3>
             </a>
             <ul class="nav flex-column">
@@ -35,19 +24,19 @@ $root = __ROOT_DIR__;
                     <span class="nav-link folder-toggle"><i class="fa-regular fa-folder"></i> b5_mydb</span>
                     <ul class="folder-content">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadContent('<?php echo $root ?>/b5_mydb/info.php')">Info (nên đọc qua)</a>
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b5_mydb/info.php')">Info (nên đọc qua)</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadContent('<?php echo $root ?>/b5_mydb/list.php')">List.php</a>
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b5_mydb/list.php')">List.php</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadContent('<?php echo $root ?>/b5_mydb/insert.php')">Insert.php</a>
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b5_mydb/insert.php')">Insert.php</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadContent('<?php echo $root ?>/b5_mydb/update.php')">Update.php</a>
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b5_mydb/update.php')">Update.php</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadContent('<?php echo $root ?>/b5_mydb/delete.php')">Delete.php</a>
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b5_mydb/delete.php')">Delete.php</a>
                         </li>
                     </ul>
                 </li>

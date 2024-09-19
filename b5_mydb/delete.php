@@ -1,11 +1,14 @@
 <?php
-
+    // require $_SERVER['DOCUMENT_ROOT'] . 'config.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/homework/' . 'config.php';
+?>
+<?php
 // Kết nối db
 require_once __DIR__ . '/Database.php';
 $db = new Database();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_POST["firstname"]) && empty($_POST["lastname"]) && empty($_POST["email"]) && !empty($_POST["id"])) {
-    
+
     $table = 'myguests'; // Exact table name on phpadmin
     $id = $_POST['id'];
     $condition = "id = " . $id;

@@ -1,4 +1,9 @@
 <?php
+// require $_SERVER['DOCUMENT_ROOT'] . 'config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/homework/' . 'config.php';
+?>
+
+<?php
 
 require_once __DIR__ . '/Database.php';
 
@@ -11,22 +16,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["firstname"]) && !empt
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
-    
+
     $data = [
         'firstname' => $firstname,
         'lastname' => $lastname,
         'email' => $email,
     ];
-    $condition = "id = " . $id ;
-    
-    $stmt = $db -> update($table, $data, $condition);
-    
+    $condition = "id = " . $id;
+
+    $stmt = $db->update($table, $data, $condition);
 }
 ?>
 
 <body class="container mt-5">
 
-    <h1 class="text-center" >Update Guest Information</h1>
+    <h1 class="text-center">Update Guest Information</h1>
     <br />
     <br />
     <br />
@@ -58,10 +62,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["firstname"]) && !empt
     </div>
 
     <!-- Buttons to Edit and Update -->
-     <div class="text-center mt-2">
-         <button type="button" class="btn btn-primary" id="editBtn">Edit</button>
-         <button type="button" class="btn btn-success" id="updateBtn" disabled>Update</button>
-     </div>
+    <div class="text-center mt-2">
+        <button type="button" class="btn btn-primary" id="editBtn">Edit</button>
+        <button type="button" class="btn btn-success" id="updateBtn" disabled>Update</button>
+    </div>
 
     <!-- Response Placeholder -->
     <div id="response" class="mt-3"></div>
@@ -70,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["firstname"]) && !empt
         $(document).ready(function() {
             // Load guests from the database via an AJAX request to a PHP script that returns the guests as JSON
             $.ajax({
-                url: '/homework/b5_mydb/utils/getGuests.php', // The PHP script that returns guests as JSON
+                url: `<?php echo __ROOT_DIR__ ?>/b5_mydb/utils/getGuests.php`, // The PHP script that returns guests as JSON
                 type: 'GET',
                 dataType: 'json',
                 success: function(guests) {
@@ -124,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["firstname"]) && !empt
 
                 // Perform the AJAX POST request
                 $.ajax({
-                    url: '/homework/b5_mydb/update.php', // The PHP script that handles the update
+                    url: `<?php echo __ROOT_DIR__ ?>/b5_mydb/update.php`, // The PHP script that handles the update
                     type: 'POST',
                     data: {
                         id: id,
@@ -137,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["firstname"]) && !empt
                         if (result.status === 'success') {
                             // Redirect to list
                             console.log('success!')
-                            loadContent('/homework/b5_mydb/list.php')
+                            loadContent(`<?php echo __ROOT_DIR__ ?>/b5_mydb/list.php`)
                         } else {
                             $('#response').html('<div class="alert alert-danger">' + result.message + '</div>');
                         }
@@ -148,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["firstname"]) && !empt
                     }
                 });
 
-                loadContent('/homework/b5_mydb/list.php')
+                loadContent(`<?php echo __ROOT_DIR__ ?>/b5_mydb/list.php`)
             });
         });
     </script>
