@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_POST["firstname"]) && empty(
     $(document).ready(function() {
         // Fetch guests from the server (as done before)
         $.ajax({
-            url: '/homework/b5_mydb/utils/getGuests.php', // The PHP script that returns guests as JSON
+            url: '<?php echo __ROOT_DIR__ ?>/b5_mydb/utils/getGuests.php', // The PHP script that returns guests as JSON
             type: 'GET',
             dataType: 'json',
             success: function(guests) {
@@ -77,14 +77,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_POST["firstname"]) && empty(
             if (confirm('Are you sure you want to delete this guest?')) {
                 // Perform the AJAX POST request to delete the guest
                 $.ajax({
-                    url: '/homework/b5_mydb/delete.php', // The PHP script that handles the deletion
+                    url: '<?php echo __ROOT_DIR__ ?>/b5_mydb/delete.php', // The PHP script that handles the deletion
                     type: 'POST',
                     data: {
                         id: guestId
                     },
                     success: function(response) {
                         // Redirect to list
-                        loadContent('/homework/b5_mydb/list.php')
+                        loadContent('<?php echo __ROOT_DIR__ ?>/b5_mydb/list.php')
                     },
                     error: function() {
                         $('#response').html('<div class="alert alert-danger">An error occurred while deleting the guest.</div>');

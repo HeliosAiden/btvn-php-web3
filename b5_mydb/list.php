@@ -61,12 +61,13 @@
     $row = $result-> fetchAll(PDO::FETCH_ASSOC);
     $total_records = $row[0]['COUNT(id)'];
     $total_pages = ceil($total_records / $limit);
+    global $root;
 
     echo '<nav aria-label="Page navigation">';
     echo '<ul class="pagination justify-content-center">';
 
     for ($i = 1; $i <= $total_pages; $i++) {
-        echo "<li class='page-item'><a class='page-link' href='#' onclick=loadContent(" . "'/homework/b5_mydb/list.php?page=" . $i . "') >" . $i . "</a></li>";
+        echo "<li class='page-item'><a class='page-link' href='#' onclick=loadContent(" . "'$root/b5_mydb/list.php?page=" . $i . "') >" . $i . "</a></li>";
     }
 
     echo '</ul>';

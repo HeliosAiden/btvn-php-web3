@@ -4,6 +4,9 @@
     <?php
     // Kết nối db
     require_once __DIR__ . '/Database.php';
+    global $root;
+
+    echo $root;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["firstname"]) && !empty($_POST["lastname"]) && !empty($_POST["email"])) {
         $firstname = $_POST["firstname"];
@@ -88,7 +91,7 @@
                 
                 // Send the POST request via AJAX
                 $.ajax({
-                    url: '/homework/b5_mydb/insert.php',
+                    url: '<?php echo $root; ?>/b5_mydb/insert.php',
                     type: 'POST',
                     data: {
                         firstname: firstname,
@@ -97,7 +100,7 @@
                     },
                     success: function(response) {
                         // Redirect to list
-                        loadContent('/homework/b5_mydb/list.php')
+                        loadContent('<?php echo $root; ?>/b5_mydb/list.php')
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         $('#response').html('<p>Error: ' + textStatus + '</p>');
