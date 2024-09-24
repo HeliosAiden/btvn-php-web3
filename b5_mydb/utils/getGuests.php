@@ -5,7 +5,7 @@
 <?php
 
 // Kết nối db
-require_once __ROOT_DIR__ . '/b5_mydb/Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . __ROOT_CORE__ . '/Database.php';
 
 $db = new Database();
 $table = 'myguests'; // Exact table name on phpadmin

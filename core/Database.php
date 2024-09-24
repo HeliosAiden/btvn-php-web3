@@ -6,9 +6,9 @@ class Database
 
     function __construct()
     {
-        require_once __DIR__ . '/DBConfig.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . __ROOT_DIR__ . '/config.php';
         require_once __DIR__ . '/Connection.php';
-        $db_config = array_filter($config['database']);
+        $db_config = array_filter($GLOBALS['database']);
         $this->__conn = DB_Connection::get_instance($db_config);
     }
 

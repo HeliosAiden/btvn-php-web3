@@ -1,6 +1,7 @@
 <?php require 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="./style/index.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="d-flex">
         <!-- Sidebar -->
@@ -39,6 +41,9 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/ql_sinh_vien/index.php')">Sinh vien table</a>
+                </li>
             </ul>
         </div>
 
@@ -47,7 +52,7 @@
             <div id="mainContent">
                 <h2>Bài tập về nhà của Nguyễn Lê Nhật Anh</h2>
                 <p>Bấm vào file hoặc thư mục tương ứng để xem :3</p>
-                
+
             </div>
         </div>
     </div>

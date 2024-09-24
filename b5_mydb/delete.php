@@ -4,7 +4,7 @@
 ?>
 <?php
 // Kết nối db
-require_once __DIR__ . '/Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . __ROOT_CORE__ . '/Database.php';
 $db = new Database();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_POST["firstname"]) && empty($_POST["lastname"]) && empty($_POST["email"]) && !empty($_POST["id"])) {
