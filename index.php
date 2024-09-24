@@ -12,7 +12,6 @@
     <link href="./style/index.css" rel="stylesheet">
 </head>
 <body>
-
     <div class="d-flex">
         <!-- Sidebar -->
         <div id="sidebar" class="bg-dark">
@@ -48,7 +47,7 @@
             <div id="mainContent">
                 <h2>Bài tập về nhà của Nguyễn Lê Nhật Anh</h2>
                 <p>Bấm vào file hoặc thư mục tương ứng để xem :3</p>
-                <p>Hiện mới chỉ update trước Bài tương tác với CSDL, các bải tập buổi còn lại sẽ update sau</p>
+                
             </div>
         </div>
     </div>
