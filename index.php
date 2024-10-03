@@ -42,7 +42,10 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/ql_sinh_vien/index.php')">Sinh vien table</a>
+                    <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/ql_sinh_vien/index.php')">Bảng sinh viên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/employee/index.php')">Bảng nhân viên</a>
                 </li>
             </ul>
         </div>
