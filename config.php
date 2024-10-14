@@ -18,8 +18,8 @@ define('__ROOT_DIR__', '/homework');
 define('__ROOT_CORE__', __ROOT_DIR__ . '/core');
 
 $config['database'] = [
-    'host' => 'localhost',
-    'db' => 'b5_mydb',
+    'host' => '127.0.0.1',
+    'db' => 'homework_db',
     'user' => 'user',
     'password' => 'my_secret_password'
 ];

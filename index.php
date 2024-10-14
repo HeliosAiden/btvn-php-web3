@@ -22,6 +22,9 @@
             </a>
             <ul class="nav flex-column">
                 <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b4_form/index.php')">Receipt form (bai 4)</a>
+                </li>
+                <li class="nav-item">
                     <span class="nav-link folder-toggle"><i class="fa-regular fa-folder"></i> b5_mydb</span>
                     <ul class="folder-content">
                         <li class="nav-item">
@@ -47,6 +50,26 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/employee/index.php')">Bảng nhân viên</a>
                 </li>
+                <li class="nav-item">
+                    <span class="nav-link folder-toggle"><i class="fa-regular fa-folder"></i> Bài 9</span>
+                    <ul class="folder-content">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b9/login.php')">Login - trang đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b9/register.php')">Register - trang đăng ký</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b9/admin_dashboard.php')">Admin dashboard - trang của quản trị viên</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b9/user_info.php')">User info - thông tin người dùng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="loadContent('<?php echo __ROOT_DIR__ ?>/b9/change_password.php')">Change password - Thay đổi mật khẩu người dùng</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
@@ -55,7 +78,8 @@
             <div id="mainContent">
                 <h2>Bài tập về nhà của Nguyễn Lê Nhật Anh</h2>
                 <p>Bấm vào file hoặc thư mục tương ứng để xem :3</p>
-
+                <p>Lưu ý 1: Dùng chung csdl nhưng các bảng trong các bài đứng độc lập với nhau</p>
+                <p>Lưu ý 2: Tại bài 9 có mục login nhưng sẽ chỉ login và phân quyền cho riêng trang đó, các trang khác sẽ ko ảnh hưởng và tiếp tục với vai trò Guests</p>
             </div>
         </div>
     </div>
